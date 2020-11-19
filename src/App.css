@@ -1035,7 +1035,7 @@
 
 /* RECIPE TINY COMPONENT */
 .recipe-tiny-container {
-  height: 15vh;
+  height: auto;
   min-height: 150px;
   width: 200px;
   margin: 0.5vh 0.5vw;
@@ -1052,6 +1052,10 @@
 }
 
 .recipe-tiny-heading {
+  margin: 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   color: black;
   font-family: "Dancing Script", cursive;
   font-size: calc(0.9em + 0.5vw);
@@ -1077,7 +1081,7 @@
   border-radius: 15px;
   width: 100%;
   max-width: 250px;
-  height: auto;
+  height: 150px;
   min-height: 100px;
   max-height: 100%;
   object-fit: cover;
