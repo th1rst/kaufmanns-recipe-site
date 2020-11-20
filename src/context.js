@@ -1,14 +1,11 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 
 const RecipesContext = React.createContext();
 
-export default class RecipesProvider extends Component {
-  state = {
-    recipes: [],
-    fetched: false,
-  };
+export default function RecipesProvider(props) {
+  const [recipes, setRecipes] = useState([]);
 
-  componentDidMount() {
+  const fetchData = () => {
     const contentful = require("contentful");
     const API_KEY = process.env.REACT_APP_CONTENTFUL_RECIPE_API_KEY;
     const client = contentful.createClient({
@@ -18,29 +15,31 @@ export default class RecipesProvider extends Component {
     client
       .getEntries({ limit: 200, content_type: "recipe" })
       .then((entry) => {
-        this.setState({ recipes: this.formatData(entry), fetched: true, });
+        setRecipes(formatData(entry));
       })
-      .catch((err) => console.log(err));
-  }
+      .catch((error) => console.log(error));
+  };
 
-  formatData(entry) {
-    let tempItems = entry.items.map(item => {
-      let id = item.sys.id
-      let images = item.fields.images.map(image => image.fields.file.url)
-      let recipe = {...item.fields, images, id}
-      return recipe
-    })
-    return tempItems
-  }
+  const formatData = (entry) => {
+    console.log("ASD");
+    let tempItems = entry.items.map((item) => {
+      let id = item.sys.id;
+      let images = item.fields.images.map((image) => image.fields.file.url);
+      let recipe = { ...item.fields, images, id };
+      return recipe;
+    });
+    return tempItems;
+  };
 
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  render() {
-    return (
-      <RecipesContext.Provider value={{ ...this.state, getSingleRecipe: this.getSingleRecipe }}>
-        {this.props.children}
-      </RecipesContext.Provider>
-    );
-  }
+  return (
+    <RecipesContext.Provider value={{ recipes }}>
+      {props.children}
+    </RecipesContext.Provider>
+  );
 }
 
 const RecipesConsumer = RecipesContext.Consumer;

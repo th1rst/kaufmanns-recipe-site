@@ -24,7 +24,7 @@ export const categoryList = [
     slug: "kuchen-suesses-torten",
   },
   {
-    name: "Liköre und Spezialitäten",
+    name: "Liköre, Spezialitäten",
     slug: "likoere-spezialitaeten",
   },
   {
@@ -32,7 +32,7 @@ export const categoryList = [
     slug: "salate",
   },
   {
-    name: "Saucen und Dips",
+    name: "Saucen / Dips",
     slug: "saucen-und-dips",
   },
   {

@@ -7,7 +7,6 @@ import { Form, Row, Col, Button, Modal} from "react-bootstrap";
 //as of now, this is a dummy page as there is no Backend to send emails from
 export default function Contact() {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 

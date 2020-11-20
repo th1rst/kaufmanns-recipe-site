@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   EmailShareButton,
   FacebookShareButton,
@@ -8,9 +8,6 @@ import {
   TelegramShareButton,
   TwitterShareButton,
   WhatsappShareButton,
-} from "react-share";
-
-import {
   EmailIcon,
   FacebookIcon,
   LinkedinIcon,
@@ -21,46 +18,40 @@ import {
   WhatsappIcon,
 } from "react-share";
 
-import {FaShareAlt} from "react-icons/fa"
+import { FaShareAlt } from "react-icons/fa";
 
-export default class SocialShare extends Component {
+export default function SocialShare() {
+  const MouseOver = (event) => (event.target.style.fill = "rgb(235, 198, 96)");
+  const MouseOut = (event) => (event.target.style.fill = "");
 
-  MouseOver(event) {
-    event.target.style.fill = "rgb(235, 198, 96)";
-  }
-
-  MouseOut(event) {
-    event.target.style.fill = "";
-  }
-
-  render() {
-    return (
-      <div className="social-share-container-outer">
-          <FaShareAlt className="share-icon"/><p className="properties-text">Teilen</p>
-          <div className="social-share-container-inner">
+  return (
+    <div className="social-share-container-outer">
+      <FaShareAlt className="share-icon" />
+      <p className="properties-text">Teilen</p>
+      <div className="social-share-container-inner">
         <EmailShareButton url={window.location.href}>
           <EmailIcon
             className="social-icon"
-            onMouseOver={this.MouseOver}
-            onMouseOut={this.MouseOut}
+            onMouseOver={MouseOver}
+            onMouseOut={MouseOut}
             size={40}
             round={true}
           />
         </EmailShareButton>
         <FacebookShareButton url={window.location.href}>
           <FacebookIcon
-          className="social-icon"
-            onMouseOver={this.MouseOver}
-            onMouseOut={this.MouseOut}
+            className="social-icon"
+            onMouseOver={MouseOver}
+            onMouseOut={MouseOut}
             size={40}
             round={true}
           />
         </FacebookShareButton>
         <LinkedinShareButton url={window.location.href}>
           <LinkedinIcon
-          className="social-icon"
-            onMouseOver={this.MouseOver}
-            onMouseOut={this.MouseOut}
+            className="social-icon"
+            onMouseOver={MouseOver}
+            onMouseOut={MouseOut}
             size={40}
             round={true}
           />
@@ -68,8 +59,8 @@ export default class SocialShare extends Component {
         <PinterestShareButton url={window.location.href}>
           <PinterestIcon
             className="social-icon"
-            onMouseOver={this.MouseOver}
-            onMouseOut={this.MouseOut}
+            onMouseOver={MouseOver}
+            onMouseOut={MouseOut}
             size={40}
             round={true}
           />
@@ -77,8 +68,8 @@ export default class SocialShare extends Component {
         <RedditShareButton url={window.location.href}>
           <RedditIcon
             className="social-icon"
-            onMouseOver={this.MouseOver}
-            onMouseOut={this.MouseOut}
+            onMouseOver={MouseOver}
+            onMouseOut={MouseOut}
             size={40}
             round={true}
           />
@@ -86,8 +77,8 @@ export default class SocialShare extends Component {
         <TelegramShareButton url={window.location.href}>
           <TelegramIcon
             className="social-icon"
-            onMouseOver={this.MouseOver}
-            onMouseOut={this.MouseOut}
+            onMouseOver={MouseOver}
+            onMouseOut={MouseOut}
             size={40}
             round={true}
           />
@@ -95,8 +86,8 @@ export default class SocialShare extends Component {
         <TwitterShareButton url={window.location.href}>
           <TwitterIcon
             className="social-icon"
-            onMouseOver={this.MouseOver}
-            onMouseOut={this.MouseOut}
+            onMouseOver={MouseOver}
+            onMouseOut={MouseOut}
             size={40}
             round={true}
           />
@@ -104,14 +95,13 @@ export default class SocialShare extends Component {
         <WhatsappShareButton url={window.location.href}>
           <WhatsappIcon
             className="social-icon"
-            onMouseOver={this.MouseOver}
-            onMouseOut={this.MouseOut}
+            onMouseOver={MouseOver}
+            onMouseOut={MouseOut}
             size={40}
             round={true}
           />
         </WhatsappShareButton>
-        </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
