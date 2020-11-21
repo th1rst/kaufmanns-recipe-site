@@ -2,7 +2,7 @@
 
 ## built in React, Bootstrap and custom CSS.
 
-![overview](https://kochannek.com/ksr.gif)
+![ksr](https://kochannek.com/portfolio/kaufmanns-rezeptsammlung/ksroverviewgithub.png)
 
 ### About
 
