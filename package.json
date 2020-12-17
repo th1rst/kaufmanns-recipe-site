@@ -1,5 +1,6 @@
 {
   "name": "kaufmanns-recipe-site",
+  "homepage": "https://kochannek.com/portfolio/kaufmanns-rezeptsammlung",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
