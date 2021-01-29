@@ -52,7 +52,7 @@ export default function Website() {
             <div className="react-container-inner-row">
               <a
                 style={{ textDecoration: "none", color: "black" }}
-                href="https://github.com/th1rst/learning/tree/master/Projects/kaufmanns-recipe-site"
+                href="https://github.com/th1rst/kaufmanns-recipe-site"
               >
                 View on <FaGithub className="github-icon" />
               </a>
