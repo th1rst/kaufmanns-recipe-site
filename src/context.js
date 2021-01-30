@@ -21,7 +21,6 @@ export default function RecipesProvider(props) {
   };
 
   const formatData = (entry) => {
-    console.log("ASD");
     let tempItems = entry.items.map((item) => {
       let id = item.sys.id;
       let images = item.fields.images.map((image) => image.fields.file.url);
